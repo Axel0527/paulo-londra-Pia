@@ -1,0 +1,645 @@
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background: rgba(6, 0, 20, 0.93);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(123, 47, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 68px;
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #00e5ff, #ff2d78);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #e8d5ff;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.25s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0;
+  height: 2px;
+  background: #00e5ff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #00e5ff;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 50%, rgba(123,47,255,0.4) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 25%, rgba(0,229,255,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 70% at 50% 100%, rgba(255,45,120,0.22) 0%, transparent 60%),
+    #060010;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent, transparent 59px,
+      rgba(123,47,255,0.05) 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent, transparent 59px,
+      rgba(123,47,255,0.05) 60px
+    );
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 2.5rem 4rem;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 9vw, 7.5rem);
+  line-height: 0.9;
+  letter-spacing: 4px;
+  color: #fff;
+  text-shadow: 0 0 50px rgba(123,47,255,0.7);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title span {
+  background: linear-gradient(135deg, #00e5ff, #ff2d78);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(232,213,255,0.8);
+}
+
+footer {
+  border-top: 1px solid rgba(123, 47, 255, 0.2);
+  padding: 1.8rem 2.5rem;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  color: rgba(232, 213, 255, 0.3);
+}
+
+footer span {
+  color: #ff2d78;
+}
+
+/* carusel*/
+.carousel {
+  width: 120%;
+  max-width: 1000px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(123, 47, 255, 0.35);
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.carousel-track img {
+  min-width: 100%;
+  height: 400px;
+  object-fit: cover;    /* recorta la imagen para llenar el espacio */
+  object-position: center top;  /* enfoca la parte de arriba */
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 0;
+  background: rgba(6, 0, 20, 0.6);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #00e5ff;
+}
+
+
+/*historia estilos*/
+
+
+.historia-hero {
+  padding: 130px 4rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-tag {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ff2d78;
+  margin-bottom: 0.5rem;
+}
+
+.page-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  letter-spacing: 4px;
+  color: #fff;
+  line-height: 1;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #00e5ff, #ff2d78);
+  margin-top: 1rem;
+  border-radius: 2px;
+}
+
+.historia-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 4rem 6rem;
+}
+
+/* ARTICULO */
+.articulo {
+  margin-bottom: 1rem;
+}
+
+.articulo-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(123, 47, 255, 0.3);
+  padding-bottom: 0.8rem;
+}
+
+.articulo-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: rgba(123, 47, 255, 0.3);
+  line-height: 1;
+}
+
+.articulo-titulo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  letter-spacing: 3px;
+  color: #fff;
+  line-height: 1;
+}
+
+.articulo-fecha {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #00e5ff;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.articulo-body {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.articulo.inverso .articulo-body {
+  grid-template-columns: 1fr 380px;
+}
+
+.articulo.inverso .articulo-img {
+  order: 2;
+}
+
+.articulo.inverso .articulo-texto {
+  order: 1;
+}
+
+.articulo-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(123, 47, 255, 0.3);
+}
+
+.articulo-texto p {
+  font-size: 0.98rem;
+  line-height: 1.95;
+  color: rgba(232, 213, 255, 0.78);
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.articulo-texto p:first-child::first-letter {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  line-height: 0.8;
+  float: left;
+  margin-right: 8px;
+  color: #00e5ff;
+}
+
+.separador {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(123,47,255,0.4), transparent);
+  margin: 3rem 0;
+}
+
+@media(max-width: 800px) {
+  .articulo-body,
+  .articulo.inverso .articulo-body {
+    grid-template-columns: 1fr;
+  }
+  .articulo.inverso .articulo-img { order: 0; }
+  .articulo.inverso .articulo-texto { order: 0; }
+  .historia-hero, .historia-content { padding-left: 1.2rem; padding-right: 1.2rem; }
+  .articulo-fecha { display: none; }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #060010;
+  color: #e8d5ff;
+  font-family: 'Nunito', sans-serif;
+}
+
+.historia-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 4rem 6rem;
+  background: transparent;
+}
+
+
+/*canciones*/
+
+.canciones-hero {
+  padding: 130px 4rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.canciones-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4rem 6rem;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.cancion-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(123, 47, 255, 0.25);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.cancion-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cancion-card:hover img {
+  transform: scale(1.08);
+}
+
+.cancion-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 0, 20, 0.2) 0%,
+    rgba(6, 0, 20, 0.95) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.cancion-card:hover .cancion-overlay {
+  opacity: 1;
+}
+
+.cancion-overlay h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.cancion-overlay p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(232, 213, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+
+
+@media(max-width: 900px) {
+  .galeria { grid-template-columns: repeat(2, 1fr); }
+  .canciones-hero, .canciones-content { padding-left: 1.2rem; padding-right: 1.2rem; }
+}
+
+@media(max-width: 500px) {
+  .galeria { grid-template-columns: 1fr; }
+}
+
+
+
+/*discografia*/
+
+.discografia-hero {
+  padding: 130px 4rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.discografia-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* FILA TOP: 2 álbumes */
+.fila-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* FILA BOTTOM: EP centrado */
+.fila-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD BASE */
+.disco-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(123, 47, 255, 0.25);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.disco-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.disco-card:hover img {
+  transform: scale(1.06);
+}
+
+/* EP más ancho que cuadrado */
+.disco-card.ep {
+  width: 50%;
+}
+
+.disco-card.ep img {
+  aspect-ratio: 5 / 4;
+}
+
+/* OVERLAY */
+.disco-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 0, 20, 0.15) 0%,
+    rgba(6, 0, 20, 0.97) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.8rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.disco-card:hover .disco-overlay {
+  opacity: 1;
+}
+
+.disco-tipo {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #00e5ff;
+  margin-bottom: 0.4rem;
+}
+
+.disco-overlay h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  line-height: 1;
+}
+
+.disco-overlay p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(232, 213, 255, 0.8);
+  margin-bottom: 0.8rem;
+}
+
+.disco-año {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  color: rgba(232, 213, 255, 0.4);
+  text-transform: uppercase;
+}
+
+@media(max-width: 800px) {
+  .fila-top { grid-template-columns: 1fr; }
+  .disco-card.ep { width: 100%; }
+  .disco-card.ep img { aspect-ratio: 1; }
+  .discografia-hero, .discografia-content { padding-left: 1.2rem; padding-right: 1.2rem; }
+}
+
+/*merch*/
+
+.merch-hero {
+  padding: 130px 4rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.merch-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4rem 6rem;
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.merch-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(123, 47, 255, 0.25);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.merch-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.merch-card:hover img {
+  transform: scale(1.06);
+}
+
+.merch-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 0, 20, 0.15) 0%,
+    rgba(6, 0, 20, 0.97) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.8rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.merch-card:hover .merch-overlay {
+  opacity: 1;
+}
+
+.merch-overlay h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.merch-overlay p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(232, 213, 255, 0.8);
+}
+
+@media(max-width: 900px) {
+  .merch-grid { grid-template-columns: repeat(2, 1fr); }
+  .merch-hero, .merch-content { padding-left: 1.2rem; padding-right: 1.2rem; }
+}
+
+@media(max-width: 500px) {
+  .merch-grid { grid-template-columns: 1fr; }
+}

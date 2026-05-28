@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIA-AJLH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="animal.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body> 
+    
+<nav>
+  <a href="index.html" class="nav-logo">Paulo Londra</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Inicio</a></li>
+    <li><a href="historia.html">Historia</a></li>
+    <li><a href="canciones.html">Canciones</a></li>
+    <li><a href="discografia.html">Discografía</a></li>
+    <li><a href="merch.html">Merch</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1 class="hero-title">PAULO<br/><span>LONDRA</span></h1>
+       <div class="divider"></div>
+<center>
+       <div class="carousel">
+      <div class="carousel-track">
+        <img src="paulo 1.webp" alt="Paulo Londra 1">
+        <img src="paulo 2.jpg" alt="Paulo Londra 2">
+        <img src="paulo 3.jpeg" alt="Paulo Londra 3">
+        <img src="paulo 4.jpeg" alt="Paulo Londra 4">
+      </div>
+      <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+</center>
+  </div>
+</div>
+
+      <p class="hero-desc">
+        ¡Bienvenido al universo de Paulo Londra! Estás en el sitio definitivo dedicado en cuerpo y alma a uno de los artistas de trap, hip-hop y reggaetón más grandes, influyentes y respetados de toda Latinoamérica.
+ <br>
+Desde las míticas batallas de freestyle en las plazas de Córdoba hasta dominar los rankings mundiales y llenar estadios, el "León con Flow" ha marcado a toda una generación. Su estilo único, que mezcla ritmos urbanos pegadizos con letras auténticas y limpias, lo ha posicionado como una verdadera leyenda moderna de la música urbana y ha demostrado que el talento real no necesita filtros.
+<br><br>
+¿Qué vas a encontrar en este espacio?<BR><br>
+Hemos diseñado cada rincón de esta plataforma para que los verdaderos fanáticos puedan vivir la experiencia completa de su música y su legado. Prepárate para explorar a fondo:
+<BR> <br>
+Su Historia Completa: Viaja en el tiempo hacia los verdaderos inicios de Paulo. Descubre cómo fue su paso por la competencia de El Quinto Escalón, los obstáculos y desafíos legales que enfrentó durante su pausa musical, y su épico regreso que paralizó por completo a la industria. Conoce al ser humano detrás del micrófono y su evolución constante.
+<br><br>
+Himnos y Canciones Icónicas: Vuelve a vibrar con los temas que rompieron todos los récords de reproducciones. Revive clásicos inolvidables que definieron el trap latino como Adán y Eva, Tal Vez y Nena Maldición, y repasa las colaboraciones internacionales de primer nivel que lo llevaron a la cima del mundo.
+<br><br>
+La Discografía Absoluta: Un archivo detallado y actualizado con cada álbum, sencillo, EP y colaboración de su carrera. Sumérgete en todas sus etapas musicales, desde Homerun hasta Back to the Game, explorando las letras completas, curiosidades de las sesiones de grabación y enlaces directos para escuchar tu música favorita sin interrupciones.
+<br><br>
+El Merch Oficial y Exclusivo: Lleva el inconfundible estilo del Aserríca directo a la calle. Explora nuestra tienda virtual con toda la indumentaria oficial. Podrás encontrar desde sus clásicas sudaderas oversize y camisetas con diseños gráficos exclusivos, hasta gorras y accesorios de edición limitada que todo seguidor fiel debe tener en su colección.
+<br><br>
+</p>
+      <footer><p><b>Axel Josue Lopez Hernandez 2294967 2L2<span>🦁</span> DPW</b></p></footer>
+    </div>
+    
+  </div>
+   
+</div>
+
+
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const dots = document.querySelectorAll('.dot');
+  const total = document.querySelectorAll('.carousel-track img').length;
+  let current = 0;
+
+  function goTo(index) {
+    current = index;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach(d => d.classList.remove('active'));
+    dots[current].classList.add('active');
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => goTo(i));
+  });
+
+  // Cambia cada 2 segundos
+  setInterval(() => goTo((current + 1) % total), 2000);
+</script>
+</body>
+</html>
